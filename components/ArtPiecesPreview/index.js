@@ -12,9 +12,9 @@ export default function ArtPiecesPreview({
       <Image
         src={imageSource}
         alt={title}
-        width={width}
-        height={height}
-      ></Image>
+        width={width * 0.75}
+        height={height * 0.75}
+      />
       <p>
         {title}&nbsp;by&nbsp;{artist}
       </p>
