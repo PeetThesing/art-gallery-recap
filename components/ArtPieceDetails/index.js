@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-export default function ArtPieceDetails(
+export default function ArtPieceDetails({
   title,
   artist,
   imageSource,
   width,
   height,
   year,
-  genre
-) {
+  genre,
+}) {
   return (
     <div>
       <Image
