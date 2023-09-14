@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import FavoriteButton from "../FavouriteButton";
 
 const Root = styled.section`
   background-color: #333;
@@ -25,10 +26,19 @@ const Artist = styled.div`
   font-size: 1.75rem;
 `;
 
-function SpotLight({ image, artist, width, height }) {
+function SpotLight({
+  image,
+  artist,
+  width,
+  height,
+  slug,
+  handleToggleFavorite,
+}) {
   return (
     <Root>
       <Piece>
+        <FavoriteButton onToggleFavorite={handleToggleFavorite} />
+
         <Image
           src={image}
           alt="spotlight piece"
