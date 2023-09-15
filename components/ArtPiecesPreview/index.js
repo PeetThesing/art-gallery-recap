@@ -20,7 +20,6 @@ export default function ArtPiecesPreview({
   height,
   slug,
 }) {
-  console.log(slug);
   return (
     <Root>
       <FavoriteButton

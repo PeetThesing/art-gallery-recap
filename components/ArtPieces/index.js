@@ -1,6 +1,5 @@
 import ArtPiecesPreview from "../ArtPiecesPreview";
 import styled from "styled-components";
-import Link from "next/link";
 const StyledLi = styled.li`
   list-style: none;
 `;

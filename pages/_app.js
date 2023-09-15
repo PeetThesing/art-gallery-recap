@@ -11,7 +11,6 @@ export default function App({ Component, pageProps }) {
   const { data, error, isLoading } = useSWR(URL, fetcher);
   const [artPieceInfo, setArtPieceInfo] = useState([]);
 
-  console.log(data);
   if (error) return <div>failing</div>;
   if (isLoading) return <div>Loading</div>;
 
@@ -32,8 +31,6 @@ export default function App({ Component, pageProps }) {
       return [...artPieceInfo, { slug, isFavorite: true }];
     });
   }
-
-console.log(artPieceInfo);
 
   return (
     <>
