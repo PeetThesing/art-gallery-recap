@@ -1,14 +1,15 @@
 import Image from "next/image";
 
 export default function ArtPieceDetails({
-  title,
+  name: title,
   artist,
   imageSource,
-  width,
-  height,
+  dimensions,
   year,
   genre,
 }) {
+  const { width, height } = dimensions;
+  
   return (
     <div>
       <Image

@@ -1,6 +1,10 @@
 import Spotlight from "@/components/Spotlight";
 
-export default function SpotlightPage({ data }) {
+export default function SpotlightPage({
+  data,
+  artPieceInfo,
+  onToggleFavorite,
+}) {
   function getRandomPiece(data) {
     return data[Math.floor(Math.random() * data.length)];
   }
@@ -15,6 +19,9 @@ export default function SpotlightPage({ data }) {
         artist={randomPiece.artist}
         width={randomPiece.dimensions.width}
         height={randomPiece.dimensions.height}
+        onToggleFavorite={onToggleFavorite}
+        slug={randomPiece.slug}
+        artPieceInfo={artPieceInfo}
       />
     </div>
   );

@@ -17,33 +17,23 @@ export default function App({ Component, pageProps }) {
 
   function handleToggleFavorite(slug) {
     setArtPieceInfo((artPieceInfo) => {
-      const findArtPieceInfo = artPieceInfo.find(
-        (piece) => piece.slug === slug
-      );
+      const foundInfo = artPieceInfo.find((piece) => piece.slug === slug);
 
-      if (findArtPieceInfo) {
-        return artPieceInfo.map((findArtPieceInfo) =>
-          findArtPieceInfo.slug === slug
+      if (foundInfo) {
+        return artPieceInfo.map((foundInfo) =>
+          foundInfo.slug === slug
             ? {
-                ...findArtPieceInfo,
-                isFavorite: !findArtPieceInfo.isFavorite,
+                ...foundInfo,
+                isFavorite: !foundInfo.isFavorite,
               }
-            : findArtPieceInfo
+            : foundInfo
         );
       }
       return [...artPieceInfo, { slug, isFavorite: true }];
     });
   }
 
-  {
-    data.map(({ slug }) => {
-      const { isFavorite } = artPieceInfo.find(
-        (findArtPieceInfo) => findArtPieceInfo.slug === slug
-      ) ?? {
-        isFavorite: false,
-      };
-    });
-  }
+console.log(artPieceInfo);
 
   return (
     <>
@@ -53,8 +43,7 @@ export default function App({ Component, pageProps }) {
           data={data}
           {...pageProps}
           artPieceInfo={artPieceInfo}
-          setArtPieceInfo={setArtPieceInfo}
-          handleToggleFavorite={handleToggleFavorite}
+          onToggleFavorite={handleToggleFavorite}
         />
       </Layout>
     </>
