@@ -1,5 +1,5 @@
 import SpotLight from "@/components/Spotlight";
-import Spotlight from "@/components/Spotlight";
+import { useMemo } from "react";
 import styled from "styled-components";
 
 const Root = styled.main`
@@ -14,10 +14,15 @@ export default function SpotlightPage({
   artPieceInfo,
   onToggleFavorite,
 }) {
-  function getRandomPiece(data) {
-    return data[Math.floor(Math.random() * data.length)];
-  }
-  const randomPiece = getRandomPiece(data);
+  const randomPiece = useMemo(
+    () => data[Math.trunc(Math.random() * data.length)],
+    [data]
+  );
+  // Compare to old Version:
+  // function getRandomPiece(data) {
+  //   return data[Math.floor(Math.random() * data.length)];
+  // }
+  // const randomPiece = getRandomPiece(data);
 
   return (
     <Root>

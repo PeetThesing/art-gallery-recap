@@ -8,13 +8,11 @@ export default function ArtPieceDetailsPage({
 }) {
   const router = useRouter();
   const { slug } = router.query;
-  console.log(slug);
 
   const findImage = data.find((piece) => {
     return piece.slug === slug;
   });
   // const { imageSource, name, artist, year, genre } = findImage;
-  console.log(findImage.name);
   return (
     <>
       <button type="button" onClick={() => router.push("/art-pieces")}>
