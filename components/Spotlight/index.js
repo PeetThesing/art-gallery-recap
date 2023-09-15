@@ -32,12 +32,18 @@ function SpotLight({
   width,
   height,
   slug,
-  handleToggleFavorite,
+  onToggleFavorite,
+  artPieceInfo
 }) {
+
   return (
     <Root>
       <Piece>
-        <FavoriteButton onToggleFavorite={handleToggleFavorite} />
+        <FavoriteButton
+          onToggleFavorite={onToggleFavorite}
+          slug={slug}
+          artPieceInfo={artPieceInfo}
+        />
 
         <Image
           src={image}
