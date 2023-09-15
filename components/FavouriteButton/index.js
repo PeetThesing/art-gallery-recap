@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-  width: 100px;
-  height: 100px;
   background-color: transparent;
   border: none;
   position: absolute;
-  right: 100px;
-  top: 115px;
+  right: 0px;
+  top: 0px;
+  color: red;
+
+  svg {
+    display: block;
+    height: 6em;
+    width: 6em;
+  }
 `;
+
 
 export default function FavoriteButton({ onToggleFavorite, slug, artPieceInfo }) {
   
@@ -19,7 +25,7 @@ export default function FavoriteButton({ onToggleFavorite, slug, artPieceInfo })
   };
 
 
-  
+
   return (
     <Button type="button" onClick={() => onToggleFavorite(slug)}>
       {/* {isFavorite ? "Add to favorites" : "Remove from favorites"} */}

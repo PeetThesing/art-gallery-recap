@@ -1,4 +1,13 @@
+import SpotLight from "@/components/Spotlight";
 import Spotlight from "@/components/Spotlight";
+import styled from "styled-components";
+
+const Root = styled.main`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+`;
 
 export default function SpotlightPage({
   data,
@@ -11,18 +20,16 @@ export default function SpotlightPage({
   const randomPiece = getRandomPiece(data);
 
   return (
-    <div>
-      <h1>Art Gallery</h1>
-      <Spotlight
+    <Root>
+      <SpotLight
         image={randomPiece.imageSource}
-        title={randomPiece.name}
         artist={randomPiece.artist}
         width={randomPiece.dimensions.width}
         height={randomPiece.dimensions.height}
+        artPieceInfo={artPieceInfo}
         onToggleFavorite={onToggleFavorite}
         slug={randomPiece.slug}
-        artPieceInfo={artPieceInfo}
       />
-    </div>
+    </Root>
   );
 }

@@ -1,8 +1,18 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import FavoriteButton from "../FavouriteButton";
+import styled from "styled-components";
+
+const Root = styled.div`
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+`;
 
 export default function ArtPiecesPreview({
+  onToggleFavorite,
+  artPieceInfo,
   title,
   artist,
   imageSource,
@@ -12,7 +22,12 @@ export default function ArtPiecesPreview({
 }) {
   console.log(slug);
   return (
-    <>
+    <Root>
+      <FavoriteButton
+        slug={slug}
+        onToggleFavorite={onToggleFavorite}
+        artPieceInfo={artPieceInfo}
+      />
       <Link href={`/art-pieces/${slug}`}>
         <Image
           src={imageSource}
@@ -24,6 +39,6 @@ export default function ArtPiecesPreview({
       <p>
         {title}&nbsp;by&nbsp;{artist}
       </p>
-    </>
+    </Root>
   );
 }

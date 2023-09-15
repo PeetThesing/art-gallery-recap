@@ -1,6 +1,10 @@
 import Image from "next/image";
+import FavoriteButton from "../FavouriteButton";
 
 export default function ArtPieceDetails({
+  slug,
+  onToggleFavorite,
+  artPieceInfo,
   name: title,
   artist,
   imageSource,
@@ -9,9 +13,14 @@ export default function ArtPieceDetails({
   genre,
 }) {
   const { width, height } = dimensions;
-  
+
   return (
     <div>
+      <FavoriteButton
+        onToggleFavorite={onToggleFavorite}
+        artPieceInfo={artPieceInfo}
+        slug={slug}
+      />
       <Image
         src={imageSource}
         alt={title}
