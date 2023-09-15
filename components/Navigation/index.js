@@ -2,17 +2,20 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const StyledNav = styled.nav`
+  height: 50px;
   display: flex;
+  background: #ccc;
   align-items: center;
-  font-weight: 2rem;
-  background-color: #ccc;
-  justify-content: space-evenly;
-  height: 80px;
+  text-align: center;
   > a {
     font-weight: 2rem;
     text-decoration: none;
     color: inherit;
     padding: 10px;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
     &:hover {
       background-color: #333;
       color: white;
