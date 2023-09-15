@@ -7,12 +7,14 @@ const Root = styled.section`
   padding: 1rem;
   display: flex;
   gap: 1rem;
+  
 `;
 
 const Piece = styled.div`
   flex: 1;
   padding: 1rem;
   position: relative;
+
 `;
 
 const Artist = styled.div`
@@ -47,8 +49,8 @@ function SpotLight({
         <Image
           src={image}
           alt="spotlight piece"
-          width={width * 0.75}
-          height={height * 0.75}
+          width={width * 0.4}
+          height={height * 0.4}
         />
       </Piece>
       <Artist>{artist}</Artist>

@@ -2,6 +2,12 @@ import useSWR from "swr";
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
 import { useState } from "react";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  text-align: center;
+  color: #888;
+`;
 
 const URL = "https://example-apis.vercel.app/api/art";
 
@@ -36,6 +42,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Layout>
+        <Title>Art Gallery</Title>
         <Component
           data={data}
           {...pageProps}

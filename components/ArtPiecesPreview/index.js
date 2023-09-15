@@ -6,10 +6,18 @@ import styled from "styled-components";
 
 const Root = styled.div`
   display: inline-block;
-  position: relative;
+  border: 2px solid #ccc;
+  padding: 2rem;
   overflow: hidden;
+  position: relative;
 `;
 
+const Caption = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  color: #ccc;
+`;
 export default function ArtPiecesPreview({
   onToggleFavorite,
   artPieceInfo,
@@ -35,9 +43,9 @@ export default function ArtPiecesPreview({
           height={height * 0.75}
         />
       </Link>
-      <p>
-        {title}&nbsp;by&nbsp;{artist}
-      </p>
+      <Caption>
+        <strong>{title}</strong>&nbsp;by&nbsp;<em>{artist}</em>
+      </Caption>
     </Root>
   );
 }
